@@ -1,0 +1,257 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "header" "filtro" "main" "footer";
+  grid-template-rows: 90px 80px 1fr 90px;
+  height: 100vh;
+}
+body header {
+  grid-area: header;
+  background-color: black;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body header .logo img {
+  width: 130px;
+}
+body header #menu-btn {
+  display: none;
+}
+body header .menu-desktop {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body header label i {
+  color: white;
+  font-size: 20px;
+}
+body .filtro {
+  grid-area: filtro;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f48b0c;
+}
+body .filtro select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+}
+body .main {
+  grid-area: main;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  background-color: rgb(17, 17, 17);
+  padding: 10px 25px;
+}
+body .main .producto {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+  border: 1px solid #f48b0c;
+  border-radius: 8px;
+  height: 300px;
+  width: 100%;
+  padding-top: 15px;
+  transition: 0.5s;
+}
+body .main .producto img {
+  width: 85%;
+  margin-bottom: 15px;
+  transition: 0.5s;
+}
+body .main .producto .titulo-producto {
+  color: white;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+body .main .producto .precio {
+  color: white;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+body .main .producto button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0px;
+  border: 1px solid white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  transition: 0.5s;
+  cursor: pointer;
+}
+body .main .producto button:hover {
+  background-color: #f48b0c;
+  border: 1px solid #f48b0c;
+}
+body .main .producto:hover img {
+  transform: scale(1.05);
+}
+body footer {
+  grid-area: footer;
+  background-color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 10px;
+}
+body footer .redes {
+  display: flex;
+  flex-flow: row;
+  gap: 15px;
+}
+body footer .redes i {
+  color: white;
+  font-size: 30px;
+}
+body footer .copy p {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medias Queries */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  body {
+    grid-template-areas: "header header header" "filtro main main" "footer footer footer";
+    grid-template-rows: 90px 1fr 90px;
+    grid-template-columns: 200px 1fr 1fr;
+  }
+  body header .logo img {
+    width: 130px;
+  }
+  body header .menu-desktop {
+    display: flex;
+  }
+  body header .menu-desktop nav ul {
+    display: flex;
+    flex-flow: row;
+    gap: 55px;
+  }
+  body header .menu-desktop nav ul li {
+    color: white;
+    list-style-type: none;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  body header .menu-mobile {
+    display: none;
+  }
+  body .filtro {
+    padding: 15px 15px;
+    align-items: start;
+    justify-content: center;
+  }
+  body .filtro select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+  }
+  body .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px;
+    row-gap: 20px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    padding: 10px 25px;
+    overflow-y: auto;
+  }
+  body .main .producto {
+    width: 49%;
+    padding-top: 30px;
+  }
+  body .main .producto .titulo-producto {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    grid-template-areas: "header filtro filtro" "header main main" "footer main main";
+    grid-template-rows: 90px 1fr 90px;
+    grid-template-columns: 200px 1fr 1fr;
+  }
+  body header {
+    padding: 25px 25px;
+    flex-flow: column;
+    justify-content: flex-start;
+  }
+  body header #menu-btn {
+    display: none;
+  }
+  body header .menu-desktop {
+    display: flex;
+    margin-top: 50px;
+  }
+  body header .menu-desktop nav ul {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 25px;
+  }
+  body header .menu-desktop nav ul li {
+    color: white;
+    list-style-type: none;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  body header .menu-mobile {
+    display: none;
+  }
+  body .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px;
+    row-gap: 20px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    padding: 10px 25px;
+  }
+  body .main .producto {
+    height: 350px;
+    width: 24.5%;
+    padding-top: 15px;
+  }
+  body .main .producto .titulo-producto {
+    font-size: 20px;
+  }
+  body footer {
+    padding: 10px 25px;
+  }
+  body footer .copy p {
+    text-align: center;
+    font-size: 12px;
+  }
+  body footer .copy p span {
+    display: none;
+  }
+}/*# sourceMappingURL=styles.css.map */
