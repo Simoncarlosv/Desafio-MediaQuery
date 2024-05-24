@@ -36,11 +36,19 @@ body header label i {
 }
 body .filtro {
   grid-area: filtro;
-  padding: 15px 25px;
+  padding: 5px 25px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f48b0c;
+}
+body .filtro .orden {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 5px;
 }
 body .filtro select {
   width: 100%;
@@ -166,8 +174,11 @@ body footer .copy p {
   }
   body .filtro {
     padding: 15px 15px;
-    align-items: start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  body .filtro .orden {
+    font-size: 16px;
   }
   body .filtro select {
     width: 100%;
@@ -226,6 +237,10 @@ body footer .copy p {
   }
   body header .menu-mobile {
     display: none;
+  }
+  body .filtro {
+    flex-direction: column;
+    padding: 10px 25px;
   }
   body .main {
     flex-direction: row;

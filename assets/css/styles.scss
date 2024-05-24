@@ -51,11 +51,20 @@ body{
 
     .filtro{
         grid-area: filtro;
-        padding: 15px 25px;
+        padding: 5px 25px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         background-color: #f48b0c;
+
+        .orden{
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            margin-bottom: 5px;
+        }
 
         select{
             width: 100%;
@@ -208,9 +217,13 @@ body{
         
         .filtro{
             padding: 15px 15px;
-            align-items: start;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-start;
     
+            .orden{
+                font-size: 16px;
+            }
+
             select{
                 width: 100%;
                 padding: 10px;
@@ -283,6 +296,13 @@ body{
                 display: none;
             }
         }
+
+        .filtro{
+            flex-direction: column;
+            padding: 10px 25px;
+            
+        }
+
         .main{
             flex-direction: row;
             flex-wrap: wrap;
